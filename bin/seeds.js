@@ -16,7 +16,7 @@ const Admin = new User({
   role: 'Admin'
 });
 
-User.create(admin, (err, user) => {
+User.create(Admin, (err, user) => {
   if (err) {
     throw err;
   }
