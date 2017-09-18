@@ -40,6 +40,12 @@ router.get('/allmembers' , (req, res, next) => {
   .reject (err => console.log(err));
 });
 
+// DELETE MEMEBER
+router.get('/delete/:id', (req, res, next) => {
+  User.findByIdAndRemove(req.params.id)
+    .then( result =>  res.redirect('/allmembers'))
+    .reject( err => console.log(err));
+});
 
 
 

@@ -2,7 +2,7 @@
 
 <ul>
 <% for(var i = 0 ; i < members.length; i++ ){%>
-   <li> <%= members[i].name  %> - <%= members[i].username %> - <%= members[i].email %></li>
+   <li> <%= members[i].name  %> - <%= members[i].username %> - <%= members[i].email %> --- <a href="/delete/<%= members[i]._id %>"> DELETE </a> </li>
  <% } %>
 </ul>
 
