@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -11,7 +10,7 @@ const MongoStore = require('connect-mongo')(session);
 
 
 const index = require('./routes/index');
-const users = require('./routes/users');
+const members = require('./routes/member');
 const authRoutes = require('./routes/auth');
 
 mongoose.connect('mongodb://localhost/co-work');
@@ -62,7 +61,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/member', members);
 app.use('/', authRoutes);
 
 
