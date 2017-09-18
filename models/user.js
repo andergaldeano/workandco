@@ -4,9 +4,14 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   name: String,
   email: String,
+  username: String,
   password: String,
-  userName: String,
-  image: String
+  avatar: String,
+  role: {
+    type: String,
+    enum : ['Member', 'Admin'],
+    default : 'Member'
+},
 });
 
 userSchema.set('timestamps', true);

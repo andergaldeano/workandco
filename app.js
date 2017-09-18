@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/main-layout');
 app.use(expressLayouts);
-app.locals.title = 'Co-Work';
+app.locals.title = 'Co - Work';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -39,7 +39,7 @@ app.use(session({
   cookie: { maxAge: 60000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
+    ttl: 24 * 60 * 60
   })
 }));
 
