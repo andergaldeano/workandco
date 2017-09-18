@@ -1,5 +1,7 @@
 <h2> Hello, <%= currentUserInfo.name %> </h2>
 
-<p>my name <%= currentUserInfo.name %> </p>
-<p>my email <%= currentUserInfo.email %> </p>
-<p>my username <%= currentUserInfo.username %> </p>
+<p>my name: <%= currentUserInfo.name %> </p>
+<p>my email: <%= currentUserInfo.email %> </p>
+<p>my username: <%= currentUserInfo.username %> </p>
+
+<a href="/edit-profile/<%= currentUserInfo._id %>"> Edit my profile </a>

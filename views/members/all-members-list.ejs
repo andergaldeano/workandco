@@ -1,0 +1,9 @@
+<h1> All the members</h1>
+
+<ul>
+<% for(var i = 0 ; i < members.length; i++ ){%>
+   <li> <%= members[i].name  %> - <%= members[i].username %> - <%= members[i].email %></li>
+ <% } %>
+</ul>
+
+<a href="/profile"> Back to profile </a>

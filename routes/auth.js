@@ -15,6 +15,7 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', (req, res, next) => {
   const nameInput = req.body.name;
   const emailInput = req.body.email;
+  const usernameInput = req.body.username;
   const passwordInput = req.body.password;
 
   if (emailInput === '' || passwordInput === '') {
@@ -43,6 +44,7 @@ router.post('/signup', (req, res, next) => {
     const userSubmission = {
       name: nameInput,
       email: emailInput,
+      username: usernameInput,
       password: hashedPass
     };
 
