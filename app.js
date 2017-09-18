@@ -61,7 +61,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/member', members);
+app.use('/', members);
 app.use('/', authRoutes);
 
 
