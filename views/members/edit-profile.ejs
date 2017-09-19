@@ -8,7 +8,8 @@
 
 
       <h2>Edit Character</h2>
-      <form action="/edit-profile/<%= member._id %>" id="edit-member-form" class="member-form">
+      <form action="/edit-profile/<%= currentUserInfo._id %>" method="POST"
+        id="edit-member-form" class="member-form">
 
         <div class="field">
           <label for="name">Name: </label>
@@ -23,7 +24,7 @@
           <input type="text" name="username">
         </div>
 
-        <button id="send-data">Update</button>
+        <button type="submit" id="send-data">Update</button>
       </form>
 
 

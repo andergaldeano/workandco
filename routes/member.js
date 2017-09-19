@@ -1,34 +1,34 @@
 const express = require('express');
 const router  = express.Router();
 const User    = require('../models/User');
-const Picture = require('../models/Picture');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
 
+
 // GET USER PROFILE
 router.get('/profile', (req, res, next) => {
-  Picture.find((err, pictures) => {
-    res.render('members/profile', { pictures });
+    res.render('members/profile', {
+      errorMessage: 'Error in editing'
   });
 });
 
 
-// Upload Photo
+// UPLOAD PHOTO
 router.post('/upload', upload.single('photo'), function(req, res){
 
- pic = new Picture({
+ user = new User({
     pic_path: `/uploads/${req.file.filename}`,
     pic_name: req.file.originalname
   });
 
- pic.save((err) => {
+ user.save((err) => {
       res.redirect('/profile');
   });
 });
 
 
 // SEE EDIT MY PROFILE
-router.get('/edit-profile/:id', (req,res, next) => {
+router.get('/edit-profile/:id', (req, res, next) => {
   User.findById(req.params.id , (err, member) => {
     if (err) { return next(err); }
     res.render('members/edit-profile', { member: member });
@@ -44,11 +44,11 @@ router.post('/edit-profile/:id', (req, res, next) => {
   const update = {
     name : req.body.name,
     email  : req.body.email,
-    username : req.body.username,
-
+    username : req.body.username
   };
-  User.findByIdAndUpdate(req.params.id , update, (err, product) => {
-    if (err){ return next(err); }
+
+  User.findByIdAndUpdate(req.params.id , update, (err, member) => {
+    if (err){ console.log(err); }
     return res.redirect('/profile');
   });
 

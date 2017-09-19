@@ -13,13 +13,10 @@ const index = require('./routes/index');
 const members = require('./routes/member');
 const authRoutes = require('./routes/auth');
 
-mongoose.connect('mongodb://localhost/co-work');
+mongoose.connect('mongodb://localhost/co-work')
+    .then( () => console.log(`Connected to DB!`));
+
 var app = express();
-
-
-var app = express();
-
- app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

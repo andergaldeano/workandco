@@ -6,11 +6,19 @@ const userSchema = new Schema({
   email: String,
   username: String,
   password: String,
+  pic_path: {
+    type: String,
+    default: '/uploads/fb503dbddd3bd2f446ff7f32b78643b3'
+  },
+  pic_name: {
+    type:String,
+    default:'1vqfec.jpg'
+ },
   role: {
     type: String,
     enum : ['Member', 'Admin'],
     default : 'Member'
-},
+ },
 });
 
 userSchema.set('timestamps', true);
