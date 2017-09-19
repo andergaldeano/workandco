@@ -31,12 +31,18 @@ User.create(Admin, (err, user) => {
 
 // CREATE A SPACE
 
-const SpaceDefault = new Space({
-  name: "Common Area",
-  capacity:"30",
-  picture: "/uploads/ad28b8b201ebec1daca38cc064db7e89",
-  isEvent: false
-});
+const SpaceDefault = [
+  { name: "Common Area",
+    capacity:"30",
+    picture: "/uploads/ad28b8b201ebec1daca38cc064db7e89",
+    isEvent: false
+  },
+  { name: "Meeting Room",
+    capacity:"5",
+    picture: "/uploads/ef9f259f2846bae3f4bada0a5bb6d3a0",
+    isEvent: false
+  }
+];
 
 Space.create(SpaceDefault, (err, space) => {
   if (err) {
