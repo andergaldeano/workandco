@@ -51,7 +51,9 @@ router.post('/edit-profile/:id', upload.single('photo'), (req, res, next) => {
 
   User.findByIdAndUpdate(req.params.id , update, (err, member) => {
     if (err){ console.log(err); }
-    return res.redirect('/profile');
+    console.log("Necesito ver MEMBER", member);
+    console.log("Necesito ver UPDATE", update);
+    return res.render('members/profile', {currentUserInfo : update});
   });
 
     // .then(result => res.render('members/profile'))

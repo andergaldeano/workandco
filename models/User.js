@@ -8,11 +8,11 @@ const userSchema = new Schema({
   password: String,
   pic_path: {
     type: String,
-    default: '/uploads/fb503dbddd3bd2f446ff7f32b78643b3'
+    default: '/uploads/66af7a224082f315c0756cf974ecad64'
   },
   pic_name: {
     type:String,
-    default:'1vqfec.jpg'
+    default:'avatar.png'
  },
   role: {
     type: String,
