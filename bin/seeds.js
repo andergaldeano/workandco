@@ -34,7 +34,7 @@ User.create(Admin, (err, user) => {
 const SpaceDefault = new Space({
   name: "Common Area",
   capacity:"30",
-  picture: "j",
+  picture: "/uploads/ad28b8b201ebec1daca38cc064db7e89",
   isEvent: false
 });
 
