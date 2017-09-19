@@ -1,5 +1,10 @@
 <h2> Hello, <%= currentUserInfo.name %> </h2>
-<img src="<%= currentUserInfo.avatar %>">
+
+<section>
+  <% pictures.forEach(function(picture) { %>
+    <img src="<%= picture.pic_path %>" alt="<%= picture.pic_name %>" />
+  <% })%>
+</section>
 
 <p>my name: <%= currentUserInfo.name %> </p>
 <p>my email: <%= currentUserInfo.email %> </p>

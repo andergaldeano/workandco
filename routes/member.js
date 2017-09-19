@@ -1,25 +1,30 @@
 const express = require('express');
 const router  = express.Router();
 const User    = require('../models/User');
+const Picture = require('../models/Picture');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
 
 // GET USER PROFILE
 router.get('/profile', (req, res, next) => {
-  res.render('members/profile', {
-    errorMessage: ''
+  Picture.find((err, pictures) => {
+    res.render('members/profile', { pictures });
   });
 });
 
 
-// Upload photo Avatar
-router.post('/upload', upload.single('avatar'), (req, res, next) => {
-  avatar = new Avatar ( {
-    avatar : req.file.avatar
+// Upload Photo
+router.post('/upload', upload.single('photo'), function(req, res){
+
+ pic = new Picture({
+    pic_path: `/uploads/${req.file.filename}`,
+    pic_name: req.file.originalname
+  });
+
+ pic.save((err) => {
+      res.redirect('/profile');
   });
 });
-
-console.log(upload);
 
 
 // EDIT MY PROFILE
