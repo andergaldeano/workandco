@@ -14,17 +14,17 @@ router.get('/profile', (req, res, next) => {
 
 
 // UPLOAD PHOTO
-router.post('/upload', upload.single('photo'), function(req, res){
-
- user = new User({
-    pic_path: `/uploads/${req.file.filename}`,
-    pic_name: req.file.originalname
-  });
-
- user.save((err) => {
-      res.redirect('/profile');
-  });
-});
+// router.post('/upload', upload.single('photo'), function(req, res){
+//
+//  user = new User({
+//     pic_path: `/uploads/${req.file.filename}`,
+//     pic_name: req.file.originalname
+//   });
+//
+//  user.save((err) => {
+//       res.redirect('/profile');
+//   });
+// });
 
 
 // SEE EDIT MY PROFILE
@@ -40,11 +40,13 @@ router.get('/edit-profile/:id', (req, res, next) => {
 
 
 // SUBMIT MY PROFILE UPDATES
-router.post('/edit-profile/:id', (req, res, next) => {
+router.post('/edit-profile/:id', upload.single('photo'), (req, res, next) => {
   const update = {
     name : req.body.name,
     email  : req.body.email,
-    username : req.body.username
+    username : req.body.username,
+    pic_path: `/uploads/${req.file.filename}`,
+    pic_name: req.file.originalname
   };
 
   User.findByIdAndUpdate(req.params.id , update, (err, member) => {
