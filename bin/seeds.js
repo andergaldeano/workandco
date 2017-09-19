@@ -41,8 +41,19 @@ const SpaceDefault = [
     capacity:"5",
     picture: "/uploads/ef9f259f2846bae3f4bada0a5bb6d3a0",
     isEvent: false
+  },
+  { name: "Bathroom",
+    capacity:"1",
+    picture: "/uploads/285e8248ee3bf071698a3ab84ceee07b",
+    isEvent: false
+  },
+  { name: "Kitchen",
+    capacity:"10",
+    picture: "/uploads/3c38eef56347b4a1eeb37cf8321f6d1c",
+    isEvent: false
   }
 ];
+
 
 Space.create(SpaceDefault, (err, space) => {
   if (err) {
