@@ -3,6 +3,7 @@
 <ul>
 <% for(var i = 0 ; i < spaces.length; i++ ){%>
    <li> <%= spaces[i].name  %> - <%= spaces[i].capacity %>
+    <a href="/space/<%= spaces[i]._id %>"> Know more about this space </a>
      <a href="/delete/<%= spaces[i]._id %>"> DELETE </a> </li>
  <% } %>
 </ul>
