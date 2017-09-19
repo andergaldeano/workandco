@@ -27,30 +27,40 @@ router.post('/upload', upload.single('photo'), function(req, res){
 });
 
 
-// EDIT MY PROFILE
+// SEE EDIT MY PROFILE
 router.get('/edit-profile/:id', (req,res, next) => {
-  User.findById(req.params.id)
-    .then(result => res.render('members/edit-profile.ejs', {member:result}))
-    .reject (err => console.log(err));
+  User.findById(req.params.id , (err, member) => {
+    if (err) { return next(err); }
+    res.render('members/edit-profile', { member: member });
+  });
+
+    // .then(result => res.render('members/edit-profile', { member:result }))
+    // .reject (err => console.log(err));
 });
 
-router.post('/edit-profile/:id', upload.single('avatar'), (req, res, next) => {
+
+// SUBMIT MY PROFILE UPDATES
+router.post('/edit-profile/:id', (req, res, next) => {
   const update = {
     name : req.body.name,
     email  : req.body.email,
     username : req.body.username,
 
   };
-  User.findByIdAndUpdate(req.params.id , update)
-    .then(result => res.render('members/profile.ejs'))
-    .catch(err => console.log ("Error in editing member"));
+  User.findByIdAndUpdate(req.params.id , update, (err, product) => {
+    if (err){ return next(err); }
+    return res.redirect('/profile');
+  });
+
+    // .then(result => res.render('members/profile'))
+    // .catch(err => console.log ("Error in editing member"));
 });
 
 
 // VIEW ALL PROFILES
 router.get('/allmembers' , (req, res, next) => {
   User.find()
-  .then(result => res.render('members/all-members-list.ejs', {members: result}))
+  .then(result => res.render('members/all-members-list', { members: result }))
   .reject (err => console.log(err));
 });
 
