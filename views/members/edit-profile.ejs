@@ -1,4 +1,12 @@
 <section class="form-container">
+
+        <h2>Upload your photo</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="photo">
+          <input type="submit" value="Save">
+        </form>
+
+
       <h2>Edit Character</h2>
       <form id="edit-member-form" class="member-form">
 
@@ -17,5 +25,7 @@
 
         <button id="send-data">Update</button>
       </form>
+
+
       <a href="/profile"> Back to profile </a>
 </section>

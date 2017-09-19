@@ -7,7 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-
+const multer = require('multer');
 
 const index = require('./routes/index');
 const members = require('./routes/member');
