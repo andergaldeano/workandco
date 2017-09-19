@@ -1,20 +1,21 @@
 <section class="form-container">
 
       <h2>Edit Character</h2>
+      <h3> Remember that you have to udate your photo too </h3>
       <form action="/edit-profile/<%= currentUserInfo._id %>" method="POST"
         id="edit-member-form" class="member-form" enctype="multipart/form-data">
 
         <div class="field">
           <label for="name">Name: </label>
-          <input type="text" name="name">
+          <input type="text" name="name" value="<%= currentUserInfo.name %>">
         </div>
         <div class="field">
           <label for="email">Email: </label>
-          <input type="text" name="email">
+          <input type="text" name="email" value="<%= currentUserInfo.email %>">
         </div>
         <div class="field">
           <label for="username">Username: </label>
-          <input type="text" name="username">
+          <input type="text" name="username" value="<%= currentUserInfo.username %>">
         </div>
         <div>
           <input type="file" name="photo">

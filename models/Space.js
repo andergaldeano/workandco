@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const spaceSchema = new Schema({
   name: String,
   capacity: String,
-  pictures: String,
+  picture: String,
   isEvent: {
     type: Boolean,
     default: false }

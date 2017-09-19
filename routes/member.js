@@ -5,6 +5,7 @@ const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
 
 
+
 // GET USER PROFILE
 router.get('/profile', (req, res, next) => {
     res.render('members/profile', {

@@ -1,0 +1,10 @@
+<h1> Those are all the spaces we have</h1>
+
+<ul>
+<% for(var i = 0 ; i < spaces.length; i++ ){%>
+   <li> <%= spaces[i].name  %> - <%= spaces[i].capacity %>
+     <a href="/delete/<%= spaces[i]._id %>"> DELETE </a> </li>
+ <% } %>
+</ul>
+
+<a href="/"> Back to profile </a>

@@ -12,6 +12,7 @@ const multer = require('multer');
 const index = require('./routes/index');
 const members = require('./routes/member');
 const authRoutes = require('./routes/auth');
+const spaces = require('./routes/space');
 
 mongoose.connect('mongodb://localhost/co-work')
     .then( () => console.log(`Connected to DB!`));
@@ -60,6 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/', members);
 app.use('/', authRoutes);
+app.use('/', spaces);
 
 
 // catch 404 and forward to error handler
