@@ -7,10 +7,22 @@ const Event   = require('../models/Event');
 
 
 // GET SPACE DATA
+// router.get('/space/:id', (req, res, next) => {
+//     Space.findById(req.params.id, (err, space) => {
+//       if(err) {return next(err);}
+//       res.render('spaces/space', { space: space});
+//     });
+// });
+
 router.get('/space/:id', (req, res, next) => {
-    Space.findById(req.params.id, (err, space) => {
-      if(err) {return next(err);}
-      res.render('spaces/space', { space: space});
+  const scope = {};
+  Space.findById(req.params.id)
+    .then (space => {
+      scope.space = space;
+      return Event.find({ 'place' : space.name});
+    })
+    .then ( events => {
+      res.render('spaces/space', { space: scope.space, events: events});
     });
 });
 

@@ -9,7 +9,14 @@
   <p>Capacity: <%= space.capacity %> </p>
 </section>
 
-
+<section>
+  <h4> Upcoming events: </h4>
+  <ul>
+  <% for(var i=0; i < events.length; i++){ %>
+    <li><a href="/event/<%= events[i]._id %>"><%= events[i].name %></a></li>
+  <% } %>
+  </ul>
+</section>
 
   <a href="/create-event"> Create event </a>
   <br>
