@@ -23,5 +23,28 @@ router.get('/all-spaces' , (req, res, next) => {
 });
 
 
+//SHOW CREATE SPACE PAGE
+router.get('/create-space', (req, res, next) => {
+  res.render('spaces/create-space', {
+    errorMessage: ''
+  });
+});
+
+
+//CREATE SPACE IN DATA
+router.post('/create-space', upload.single('image'), function(req, res){
+
+  space = new Space({
+    name: req.body.name,
+    capacity: req.body.capacity,
+    picture: `/uploads/${req.file.filename}`,
+    isEvent: false
+  });
+
+ space.save((err) => {
+      res.redirect('/all-spaces');
+  });
+});
+
 
 module.exports = router;
