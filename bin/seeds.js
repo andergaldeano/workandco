@@ -3,6 +3,7 @@ const bcrypt     = require("bcrypt");
 const bcryptSalt = 10;
 const User       = require('../models/User');
 const Space      = require('../models/Space');
+const Event      = require('../models/Event');
 
 
 mongoose.connect("mongodb://localhost/co-work");
@@ -60,5 +61,27 @@ Space.create(SpaceDefault, (err, space) => {
     throw err;
   }
   console.log(space);
+  mongoose.connection.close();
+});
+
+
+
+// CREATE A EVENT
+
+const EventDefault = [
+  { name: "Event 1",
+    description: "Workshop for dummies",
+  },
+  { name: "Ironbeers",
+    description: "Party for ironhackers",
+  },
+];
+
+
+Event.create(EventDefault, (err, event) => {
+  if (err) {
+    throw err;
+  }
+  console.log(event);
   mongoose.connection.close();
 });

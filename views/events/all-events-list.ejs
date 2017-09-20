@@ -1,0 +1,10 @@
+<h1> Those are all the events we have</h1>
+
+<ul>
+<% for(var i = 0 ; i < events.length; i++ ){%>
+   <li> <%= events[i].name  %>
+    <br><a href="/event/<%= events[i]._id %>"> Know more about this event </a></li>
+ <% } %>
+</ul>
+
+<a href="/"> Back Home </a>
