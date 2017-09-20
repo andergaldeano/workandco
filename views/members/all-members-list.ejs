@@ -2,7 +2,16 @@
 
 <ul>
 <% for(var i = 0 ; i < members.length; i++ ){%>
-   <li> <%= members[i].name  %> - <%= members[i].username %> - <%= members[i].email %> --- <a href="/delete/<%= members[i]._id %>"> DELETE </a> </li>
+   <li>
+     <%= members[i].name  %> -
+     <%= members[i].username %> - <%= members[i].email %>
+       <a href="/profile/<%= members[i]._id %>"> See Member</a>
+
+     <% if (currentUserInfo.role === 'Admin') { %>
+       <a href="/delete/<%= members[i]._id %>"> Delete Member</a>
+     <% } %>
+
+  </li>
  <% } %>
 </ul>
 
