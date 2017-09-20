@@ -3,14 +3,21 @@ const router  = express.Router();
 const Event    = require('../models/Event');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
+const Space    = require('../models/Space');
+
 
 
 
 // GET EVENT DATA
 router.get('/event/:id', (req, res, next) => {
-    Event.findById(req.params.id, (err, event) => {
-      if(err) {return next(err);}
-      res.render('events/event', { event: event });
+  const scope = {};
+  Event.findById(req.params.id)
+    .then (event => {
+      scope.event = event;
+      return Space.findOne({ 'name' : event.place});
+    })
+    .then ( space => {
+      res.render('events/event', { event: scope.event, space: space});
     });
 });
 
@@ -24,9 +31,9 @@ router.get('/all-events' , (req, res, next) => {
 
 //SHOW CREATE EVENT PAGE
 router.get('/create-event', (req, res, next) => {
-  res.render('events/create-event', {
-    errorMessage: ''
-  });
+  Space.find()
+  .then( spaces => res.render('events/create-event', { spaces: spaces}))
+  .reject (err => console.log(err));
 });
 
 

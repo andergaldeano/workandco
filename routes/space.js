@@ -3,13 +3,14 @@ const router  = express.Router();
 const Space   = require('../models/Space');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
+const Event   = require('../models/Event');
 
 
 // GET SPACE DATA
 router.get('/space/:id', (req, res, next) => {
     Space.findById(req.params.id, (err, space) => {
       if(err) {return next(err);}
-      res.render('spaces/space', { space: space });
+      res.render('spaces/space', { space: space});
     });
 });
 

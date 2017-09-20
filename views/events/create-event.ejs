@@ -15,8 +15,11 @@
 
     <div>
       <label for="place-input"> Place </label>
-      <input type="text" name="place" id="place-input"
-        placeholder="event place">
+        <select name="place">
+          <% for(var i=0; i < spaces.length; i++){ %>
+            <option><%= spaces[i].name %></option>
+          <% } %>
+        </select>
     </div>
 
     <div>
