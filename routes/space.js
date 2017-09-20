@@ -1,9 +1,8 @@
 const express = require('express');
 const router  = express.Router();
-const Space    = require('../models/Space');
+const Space   = require('../models/Space');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
-
 
 
 // GET SPACE DATA

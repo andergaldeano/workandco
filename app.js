@@ -48,7 +48,6 @@ app.use((req, res, next) => {
   } else {
     res.locals.isUserLoggedIn = false;
   }
-
   next();
 });
 

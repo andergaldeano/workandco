@@ -7,6 +7,12 @@
  <% } %>
 </ul>
 
-<a href="/create-space"> Create space </a>
-<br>
-<a href="/"> Back Home </a>
+
+
+<% if (currentUserInfo.role === 'Admin') { %>
+  <a href="/create-space"> Create space </a>
+  <br>
+  <a href="/"> Back Home </a>
+    <% } else { %>
+  <a href="/"> Back Home </a>
+<% } %>
