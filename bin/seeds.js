@@ -65,15 +65,18 @@ Space.create(SpaceDefault, (err, space) => {
 });
 
 
-
 // CREATE A EVENT
 
 const EventDefault = [
-  { name: "Event 1",
-    description: "Workshop for dummies",
+  { name: "Yoga",
+    description: "Monday Mornings at 9AM ",
+    place: "Meeting Room",
+    image: "/uploads/65df23df9f98b43e924859047c9a112e"
   },
   { name: "Ironbeers",
-    description: "Party for ironhackers",
+    description: "Party for ironhackers at 6:30PM",
+    place: "Kitchen",
+    image: "/uploads/65df23df9f98b43e924859047c9a112e"
   },
 ];
 

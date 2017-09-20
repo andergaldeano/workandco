@@ -22,6 +22,27 @@ router.get('/all-events' , (req, res, next) => {
   .reject (err => console.log(err));
 });
 
+//SHOW CREATE EVENT PAGE
+router.get('/create-event', (req, res, next) => {
+  res.render('events/create-event', {
+    errorMessage: ''
+  });
+});
 
+
+//CREATE EVENT IN DATA
+router.post('/create-event', upload.single('image'), function(req, res){
+
+  event = new Event({
+    name: req.body.name,
+    description: req.body.description,
+    place: req.body.place,
+    image: `/uploads/${req.file.filename}`
+  });
+
+ event.save((err) => {
+      res.redirect('/all-events');
+  });
+});
 
 module.exports = router;
