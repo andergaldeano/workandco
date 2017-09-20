@@ -13,6 +13,14 @@ router.get('/profile', (req, res, next) => {
   });
 });
 
+// OTHER USERS PROFILES
+router.get('/profile/:id', (req, res, next) => {
+  User.findById(req.params.id , (err, member) => {
+    if (err) { return next(err); }
+    res.render('members/other-members', { member: member });
+  });
+});
+
 
 // SEE EDIT MY PROFILE
 router.get('/edit-profile/:id', (req, res, next) => {
