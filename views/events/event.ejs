@@ -1,0 +1,15 @@
+<h2> This is <%= event.name %> </h2>
+
+<section>
+    <img src="<%= event.image %>" />
+</section>
+
+
+<section>
+  <p>event name: <%= event.name %> </p>
+  <p>Description: <%= event.description %> </p>
+  <p>Place: <a href="/space/<%= space._id %>"><%= event.place %></a></p>
+
+</section>
+
+  <a href="/all-events"> Back to Events </a>

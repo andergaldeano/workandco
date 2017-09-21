@@ -3,9 +3,16 @@
 <ul>
 <% for(var i = 0 ; i < spaces.length; i++ ){%>
    <li> <%= spaces[i].name  %> - <%= spaces[i].capacity %>
-    <a href="/space/<%= spaces[i]._id %>"> Know more about this space </a>
-     <a href="/delete/<%= spaces[i]._id %>"> DELETE </a> </li>
+    <br><a href="/space/<%= spaces[i]._id %>"> Know more about this space </a></li>
  <% } %>
 </ul>
 
-<a href="/"> Back to profile </a>
+
+
+<% if (currentUserInfo.role === 'Admin') { %>
+  <a href="/create-space"> Create space </a>
+  <br>
+  <a href="/"> Back Home </a>
+    <% } else { %>
+  <a href="/"> Back Home </a>
+<% } %>

@@ -14,18 +14,13 @@ router.get('/profile', (req, res, next) => {
 });
 
 
-// UPLOAD PHOTO
-// router.post('/upload', upload.single('photo'), function(req, res){
-//
-//  user = new User({
-//     pic_path: `/uploads/${req.file.filename}`,
-//     pic_name: req.file.originalname
-//   });
-//
-//  user.save((err) => {
-//       res.redirect('/profile');
-//   });
-// });
+// OTHER USERS PROFILES
+router.get('/profile/:id', (req, res, next) => {
+  User.findById(req.params.id , (err, member) => {
+    if (err) { return next(err); }
+    res.render('members/other-members', { member: member });
+  });
+});
 
 
 // SEE EDIT MY PROFILE
@@ -34,9 +29,6 @@ router.get('/edit-profile/:id', (req, res, next) => {
     if (err) { return next(err); }
     res.render('members/edit-profile', { member: member });
   });
-
-    // .then(result => res.render('members/edit-profile', { member:result }))
-    // .reject (err => console.log(err));
 });
 
 
@@ -56,9 +48,6 @@ router.post('/edit-profile/:id', upload.single('photo'), (req, res, next) => {
     console.log("Necesito ver UPDATE", update);
     return res.render('members/profile', {currentUserInfo : update});
   });
-
-    // .then(result => res.render('members/profile'))
-    // .catch(err => console.log ("Error in editing member"));
 });
 
 

@@ -1,0 +1,28 @@
+<section>
+  <h2>Create new space</h2>
+  <form action="/create-space" method="post" enctype="multipart/form-data">
+    <div>
+      <label for="space-name-input"> Space Name </label>
+      <input type="text" name="name" id="space-name-input"
+        placeholder="Space Name">
+    </div>
+
+    <div>
+      <label for="capacity-input"> Capacity </label>
+      <input type="text" name="capacity" id="capacity-input"
+        placeholder="space capacity">
+    </div>
+
+    <div>
+      <label for="image-input"> Pictures </label>
+      <input type="file" name="image" id="image-input"
+        placeholder="space image">
+    </div>
+
+    <button type="submit">Create New Space</button>
+  </form>
+</section>
+
+<a href="/all-spaces"> Back to Spaces </a>
+<br>
+<a href="/"> Back Home </a>

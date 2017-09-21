@@ -1,0 +1,37 @@
+<section>
+  <h2>Create new event</h2>
+  <form action="/create-event" method="post" enctype="multipart/form-data">
+    <div>
+      <label for="event-name-input"> Event Name </label>
+      <input type="text" name="name" id="event-name-input"
+        placeholder="Event Name">
+    </div>
+
+    <div>
+      <label for="description-input"> Description </label>
+      <input type="text" name="description" id="description-input"
+        placeholder="event description">
+    </div>
+
+    <div>
+      <label for="place-input"> Place </label>
+        <select name="place">
+          <% for(var i=0; i < spaces.length; i++){ %>
+            <option><%= spaces[i].name %></option>
+          <% } %>
+        </select>
+    </div>
+
+    <div>
+      <label for="image-input"> Event Image </label>
+      <input type="file" name="image" id="image-input"
+        placeholder="event image">
+    </div>
+
+    <button type="submit">Create New Event</button>
+  </form>
+</section>
+
+<a href="/all-events"> Back to Events </a>
+<br>
+<a href="/"> Back Home </a>
