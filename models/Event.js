@@ -6,7 +6,7 @@ const eventSchema = new Schema({
   description: String,
   place: String,
   image: String,
-  date: Date
+  date: { type: Date, default: Date.now }
 });
 
 eventSchema.set('timestamps', true);

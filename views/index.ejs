@@ -1,11 +1,9 @@
-<p> Welcome to <%= title %>. </p>
-
-<% if (isUserLoggedIn) { %>
-  <p> Hello, <%= currentUserInfo.name %>. <% if (currentUserInfo.role === 'Admin') { %> from here you can manage your space  <% } %> </p>
-<% } %>
 
 <nav>
-  <ul>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+
+  <ul id="nav-mobile" class="right hide-on-med-and-down">
     <% if (!isUserLoggedIn) { %>
       <li> <a href="/signup"> Sign Up </a> </li>
       <li> <a href="/login"> Log In </a> </li>
@@ -17,7 +15,7 @@
       <a href="/create-event-manager"> Create new Event Manager Account</a>
       <br>
       <a href="/create-event"> Create new  event </a>
-      
+
 
       <% }else if (currentUserInfo.role === 'EventManager') { %>
 
@@ -36,3 +34,9 @@
       <% } %>
   </ul>
 </nav>
+
+<p> Welcome to <%= title %>. </p>
+
+<% if (isUserLoggedIn) { %>
+  <p> Hello, <%= currentUserInfo.name %>. <% if (currentUserInfo.role === 'Admin') { %> from here you can manage your space  <% } %> </p>
+<% } %>

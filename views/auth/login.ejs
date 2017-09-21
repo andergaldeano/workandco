@@ -1,10 +1,14 @@
-<h2> Log In </h2>
 
-<% if (errorMessage) { %>
-  <p class="error-message">
-    <%= errorMessage %>
-  </p>
-<% } %>
+<div class="container">
+  <div class="row">
+
+    <h2> Log In </h2>
+
+    <% if (errorMessage) { %>
+      <p class="error-message">
+        <%= errorMessage %>
+      </p>
+    <% } %>
 
 <form action="/login" method="post">
   <div>
@@ -19,7 +23,7 @@
       placeholder="••••••••••••">
   </div>
 
-  <button> Log In </button>
+  <button class="waves-effect waves-light btn-large"> Log In </button>
 </form>
 
 <p>
@@ -28,3 +32,7 @@
     Create an account.
   </a>
 </p>
+
+
+  </div>
+</div>

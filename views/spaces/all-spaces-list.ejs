@@ -1,18 +1,16 @@
-<h1> Those are all the spaces we have</h1>
+<h1> These are all the spaces we have</h1>
 
-<ul>
-<% for(var i = 0 ; i < spaces.length; i++ ){%>
-   <li> <%= spaces[i].name  %> - <%= spaces[i].capacity %>
-    <br><a href="/space/<%= spaces[i]._id %>"> Know more about this space </a></li>
- <% } %>
-</ul>
+  <ul>
+  <% for(var i = 0 ; i < spaces.length; i++ ){%>
+     <li> <%= spaces[i].name  %> - <%= spaces[i].capacity %>
+      <br><a href="/space/<%= spaces[i]._id %>"> Know more about this space </a></li>
+   <% } %>
+  </ul>
 
-
-
-<% if (currentUserInfo.role === 'Admin') { %>
-  <a href="/create-space"> Create space </a>
-  <br>
-  <a href="/"> Back Home </a>
-    <% } else { %>
-  <a href="/"> Back Home </a>
-<% } %>
+  <% if (currentUserInfo.role === 'Admin') { %>
+    <a href="/create-space"> Create space </a>
+    <br>
+    <a href="/"> Back Home </a>
+      <% } else { %>
+    <a href="/"> Back Home </a>
+  <% } %>

@@ -1,21 +1,20 @@
-const express = require('express');
-const path = require('path');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+const express  = require('express');
+const path     = require('path');
+const logger   = require('morgan');
+const cookieParser   = require('cookie-parser');
+const bodyParser     = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-const multer = require('multer');
+const session  = require('express-session');
+const MongoStore     = require('connect-mongo')(session);
+const multer   = require('multer');
 
-const index = require('./routes/index');
-const members = require('./routes/member');
+const index    = require('./routes/index');
+const members  = require('./routes/member');
 const authRoutes = require('./routes/auth');
-const spaces = require('./routes/space');
-const events = require('./routes/event');
-const coments = require('./routes/coment');
-//const bookings = require('./routes/booking');
+const spaces   = require('./routes/space');
+const events   = require('./routes/event');
+const comments = require('./routes/comment');
 
 mongoose.connect('mongodb://localhost/co-work')
     .then( () => console.log(`Connected to DB!`));
@@ -64,8 +63,7 @@ app.use('/', members);
 app.use('/', authRoutes);
 app.use('/', spaces);
 app.use('/', events);
-app.use('/', coments);
-//app.use('/', bookings);
+app.use('/', comments);
 
 
 // catch 404 and forward to error handler

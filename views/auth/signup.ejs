@@ -1,37 +1,38 @@
-<h2> Sign Up </h2>
 
-<% if (errorMessage) { %>
-  <p class="error-message">
-    <%= errorMessage %>
-  </p>
-<% } %>
+<div class="container">
+  <div class="row">
+    <h2> Sign Up </h2>
 
-<form action="/signup" method="post">
-  <div>
-    <label for="name-input"> Name </label>
-    <input type="text" name="name" id="name-input"
-      placeholder="Your Name">
-  </div>
+      <% if (errorMessage) { %>
+        <p class="error-message">
+          <%= errorMessage %>
+        </p>
+      <% } %>
 
-  <div>
+<div class="row">
+  <form class="col s12" action="/signup" method="post">
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="text" name="name" id="name-input" placeholder="Your Name">
+        <label for="name-input"> Name </label>
+    </div>
+
+  <div class="input-field col s12">
+    <input type="email" name="email" id="email-input" placeholder="Your Email">
     <label for="email-input"> Email </label>
-    <input type="email" name="email" id="email-input"
-      placeholder="Your Email">
   </div>
 
-  <div>
+  <div class="input-field col s12">
+    <input type="text" name="username" id="username-input" placeholder="your username">
     <label for="username-input"> Username </label>
-    <input type="username" name="username" id="username-input"
-      placeholder="your username">
   </div>
 
-  <div>
-    <label for="password-input"> Password </label>
-    <input type="password" name="password" id="password-input"
-      placeholder="••••••••••••">
+  <div class="input-field col s12">
+    <input type="password" name="password" id="password-input" placeholder="••••••••••••">
+      <label for="password-input"> Password </label>
   </div>
 
-  <button> Create New Account </button>
+  <button class="waves-effect waves-light btn-large"> Create New Account </button>
 </form>
 
 <p>
@@ -40,3 +41,7 @@
     Log in.
   </a>
 </p>
+
+
+</div>
+</div>

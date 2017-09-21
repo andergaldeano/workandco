@@ -2,7 +2,7 @@
 
 <ul>
 <% for(var i = 0 ; i < events.length; i++ ){%>
-   <li> <%= events[i].name  %>
+   <li> <%= events[i].name  %> - <%= events[i].date %>
     <br><a href="/event/<%= events[i]._id %>"> Know more about this event </a></li>
  <% } %>
 </ul>

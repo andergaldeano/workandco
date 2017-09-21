@@ -6,13 +6,13 @@ const upload  = multer({ dest: './public/uploads/' });
 const bcrypt  = require('bcrypt');
 const bcryptSalt = 10;
 
+
 // GET USER PROFILE
 router.get('/profile', (req, res, next) => {
     res.render('members/profile', {
       errorMessage: 'Error in editing'
   });
 });
-
 
 // OTHER USERS PROFILES
 router.get('/profile/:id', (req, res, next) => {
