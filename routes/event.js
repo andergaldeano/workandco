@@ -32,24 +32,36 @@ router.get('/all-events' , (req, res, next) => {
 //SHOW CREATE EVENT PAGE
 router.get('/create-event', (req, res, next) => {
   Space.find()
-  .then( spaces => res.render('events/create-event', { spaces: spaces}))
-  .reject (err => console.log(err));
+  .then( spaces => res.render('events/create-event', { spaces: spaces, errorMessage: ""}))
+  .catch (err => console.log(err));
 });
 
 
 //CREATE EVENT IN DATA
-router.post('/create-event', upload.single('image'), function(req, res){
+router.post('/create-event', upload.single('image'), (req, res) => {
 
   event = new Event({
     name: req.body.name,
     description: req.body.description,
     place: req.body.place,
-    image: `/uploads/${req.file.filename}`
+    image: `/uploads/${req.file.filename}`,
+    date: req.body.date
   });
 
- event.save((err) => {
-      res.redirect('/all-events');
-  });
+  Event.findOne({ 'place' : req.body.place, 'date' : req.body.date})
+    .then( (isThereEvent) => {
+      if(isThereEvent == null){
+        event.save().then( ok => {
+          res.redirect('/all-events');
+        });
+      } else{
+        Space.find()
+        .then ( spaces => res.render('events/create-event', { spaces: spaces,
+          errorMessage: `This area has already been reserved the date you've selected. Try it on another place/date.`
+        }));
+      }
+    });
 });
+
 
 module.exports = router;

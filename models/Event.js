@@ -5,7 +5,8 @@ const eventSchema = new Schema({
   name: String,
   description: String,
   place: String,
-  image: String
+  image: String,
+  date: Date
 });
 
 eventSchema.set('timestamps', true);

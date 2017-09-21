@@ -23,6 +23,11 @@
     </div>
 
     <div>
+      <label for="date-input"> Choose a date: </label>
+        <input id="date" name = "date" type="date" value="2017-09-30">
+    </div>
+
+    <div>
       <label for="image-input"> Event Image </label>
       <input type="file" name="image" id="image-input"
         placeholder="event image">
@@ -31,6 +36,12 @@
     <button type="submit">Create New Event</button>
   </form>
 </section>
+
+<% if (errorMessage) { %>
+  <h2 class="error-message">
+    <%= errorMessage %>
+  </h2>
+<% } %>
 
 <a href="/all-events"> Back to Events </a>
 <br>
