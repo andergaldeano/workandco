@@ -15,6 +15,8 @@ const authRoutes = require('./routes/auth');
 const spaces = require('./routes/space');
 const events = require('./routes/event');
 //const bookings = require('./routes/booking');
+const reviews = require('./routes/review');
+
 
 mongoose.connect('mongodb://localhost/co-work')
     .then( () => console.log(`Connected to DB!`));
@@ -65,6 +67,7 @@ app.use('/', authRoutes);
 app.use('/', spaces);
 app.use('/', events);
 //app.use('/', bookings);
+app.use('/', reviews);
 
 
 // catch 404 and forward to error handler
