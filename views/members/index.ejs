@@ -1,8 +1,8 @@
 <h1>Members list</h1>
 <ul>
     <% for (i=0; i < member.length; i++) { %>
-    <li><a href="/member/profile/<%= employees[i]._id %>"><%= member[i].username %></a></li>
-    <a href="/member/<%= member[i]._id %>/edit"> Edit member</a>
-    <a href="/member/<%= member[i]._id %>/delete"> Delete</a>
+    <li><a href="/member/profile/<%= employees[i]._id %>" class="waves-effect waves-light btn-large"><%= member[i].username %></a></li>
+    <a href="/member/<%= member[i]._id %>/edit" class="waves-effect waves-light btn-large"> Edit member</a>
+    <a href="/member/<%= member[i]._id %>/delete" class="waves-effect waves-light btn-large"> Delete</a>
   <% } %>
 </ul>

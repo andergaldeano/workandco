@@ -1,16 +1,20 @@
-<h1> These are all the spaces we have</h1>
+<div class="container">
 
-  <ul>
-  <% for(var i = 0 ; i < spaces.length; i++ ){%>
-     <li> <%= spaces[i].name  %> - <%= spaces[i].capacity %>
-      <br><a href="/space/<%= spaces[i]._id %>"> Know more about this space </a></li>
-   <% } %>
-  </ul>
+  <h1> These are all the spaces we have</h1>
 
-  <% if (currentUserInfo.role === 'Admin') { %>
-    <a href="/create-space"> Create space </a>
-    <br>
-    <a href="/"> Back Home </a>
-      <% } else { %>
-    <a href="/"> Back Home </a>
-  <% } %>
+    <ul class="collection">
+    <% for(var i = 0 ; i < spaces.length; i++ ){%>
+       <li class="collection-item"> <h4><%= spaces[i].name  %></h4> <h5><%= spaces[i].capacity %> people</h5>
+        <br><a href="/space/<%= spaces[i]._id %>" class="waves-effect waves-light btn-large"> Know more about this space </a></li>
+     <% } %>
+    </ul>
+
+    <% if (currentUserInfo.role === 'Admin') { %>
+      <a href="/create-space" class="waves-effect waves-light btn-large"> Create space </a>
+      <br>
+      <a href="/" class="waves-effect waves-light btn-large"> Back Home </a>
+        <% } else { %>
+      <a href="/" class="waves-effect waves-light btn-large"> Back Home </a>
+    <% } %>
+
+</div>

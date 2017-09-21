@@ -1,13 +1,16 @@
-<h2> Hello, <%= currentUserInfo.name %> </h2>
+<div class="container">
+  <h2> Hello, <%= currentUserInfo.name %> </h2>
 
-<section>
-    <img src="<%= currentUserInfo.pic_path %>" alt="<%= currentUserInfo.pic_name %>" />
-</section>
+  <section>
+      <img src="<%= currentUserInfo.pic_path %>" alt="<%= currentUserInfo.pic_name %>" class="circle"/>
+  </section>
 
-<p>my name: <%= currentUserInfo.name %> </p>
-<p>my email: <%= currentUserInfo.email %> </p>
-<p>my username: <%= currentUserInfo.username %> </p>
+  <h5>Name:</h5> <p><%= currentUserInfo.name %> </p>
+  <h5>E-mail:</h5> <p><%= currentUserInfo.email %> </p>
+  <h5>Username:</h5> <p><%= currentUserInfo.username %> </p>
 
-<a href="/edit-profile/<%= currentUserInfo._id %>"> Edit my profile </a>
-<br>
-<a href="/"> Back home </a>
+  <a href="/edit-profile/<%= currentUserInfo._id %>" class="waves-effect waves-light btn-large"> Edit my profile </a>
+
+  <a href="/" class="waves-effect waves-light btn-large"> Back home </a>
+
+</div>

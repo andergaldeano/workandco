@@ -1,5 +1,6 @@
-<section class="form-container">
+<div class="container">
 
+<div class="row">
       <h2>Edit Character</h2>
       <h3> Remember that you have to udate your photo too </h3>
       <form action="/edit-profile/<%= currentUserInfo._id %>" method="POST"
@@ -21,9 +22,10 @@
           <input type="file" name="photo">
         </div>
 
-        <button type="submit" id="send-data">Update</button>
+        <button type="submit" id="send-data" class="waves-effect waves-light btn-large">Update</button>
       </form>
 
 
-      <a href="/profile"> Back to profile </a>
-</section>
+      <a href="/profile" class="waves-effect waves-light btn-large"> Back to profile </a>
+
+<div class="container">

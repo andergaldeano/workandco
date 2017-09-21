@@ -1,18 +1,22 @@
-<h1> All the members</h1>
+<div class="container">
 
-<ul>
-<% for(var i = 0 ; i < members.length; i++ ){%>
-   <li>
-     <%= members[i].name  %> -
-     <%= members[i].username %> - <%= members[i].email %>
-       <a href="/profile/<%= members[i]._id %>"> See Member</a>
+    <h1> All the members</h1>
 
-     <% if (currentUserInfo.role === 'Admin') { %>
-       <a href="/delete/<%= members[i]._id %>"> Delete Member</a>
+    <ul class="collection">
+    <% for(var i = 0 ; i < members.length; i++ ){%>
+       <li class="collection-item">
+         <h4><%= members[i].name  %></h4>
+         <h5><%= members[i].username %> - <%= members[i].email %></h5>
+           <a href="/profile/<%= members[i]._id %>" class="waves-effect waves-light btn-large"> See Member</a>
+
+         <% if (currentUserInfo.role === 'Admin') { %>
+           <a href="/delete/<%= members[i]._id %>" class="waves-effect waves-light btn-large"> Delete Member</a>
+         <% } %>
+
+      </li>
      <% } %>
+    </ul>
 
-  </li>
- <% } %>
-</ul>
+    <a href="/" class="waves-effect waves-light btn-large"> Back to profile </a>
 
-<a href="/"> Back to profile </a>
+</div>

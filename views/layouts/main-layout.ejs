@@ -11,17 +11,46 @@
 </head>
 
   <body>
-    <header>
-      <h1> <a href="/"> <%= title %> </a> </h1>
-    </header>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo"><%= title %></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+  </nav>
+
 
     <%- body -%>
 
-    <footer>
-      <p> Made for Co-Working  </p>
-    </footer>
   </body>
 
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Co-work</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">IronChavales</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#">Chaval Ander</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Chaval Luqui</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2017 Copyright IronChavales
+      <a class="grey-text text-lighten-4 right" href="#!">Made for Co-Workings</a>
+      </div>
+    </div>
+  </footer>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
