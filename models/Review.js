@@ -4,12 +4,10 @@ const Schema   = mongoose.Schema;
 const reviewSchema = new Schema({
   senderId: String,
   senderName: String,
-  receiverId: String,
-  campaignId: String,
+  eventId: String,
   title: String,
   description: String,
   stars: Number,
-  isRespond: Boolean
 }, {
   timestamps: {
     createdAt: 'created_at',

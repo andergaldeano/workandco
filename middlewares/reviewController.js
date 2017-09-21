@@ -1,32 +1,28 @@
-const Review = require('../models/Review');
-const Campaign = require('../models/Event');
+const Review   = require('../models/Review');
+const Event    = require('../models/Event');
 
 module.exports = {
   createGet: (req, res, next) => {
     res.render('reviews/create', {
       user: res.locals.user,
-      idCampaign: req.params
+      idEvent: req.params
     });
   },
   createPost: (req, res, next) => {
-    Campaign.find({_id: req.params.id}, (err, campaign) => {
+    Event.find({_id: req.params.id}, (err, campaign) => {
       if (err) {
         console.log(err);
       }
       let newReview = new Review({
-        campaignId: req.params.id,
         senderId: res.locals.user._id,
         senderName: res.locals.user.username,
-        receiverId: campaign[0].refCreatorId,
         title: req.body.title,
         description: req.body.description,
         stars: req.body.stars,
-        city: req.body.city,
-        isRespond: true
       });
       newReview.save()
       .then((result, err) => {
-        res.redirect(`../../campaign/${req.params.id}/detail`);
+        res.redirect(`../../event/${req.params.id}`);
       })
       .catch(error => next(error));
     });
@@ -37,7 +33,7 @@ module.exports = {
       if (err) {
         return next(err);
       }
-      res.redirect("/campaign");
+      res.redirect("/event");
     });
   }
 };
