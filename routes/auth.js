@@ -5,12 +5,16 @@ const User    = require('../models/User');
 const router  = express.Router();
 const bcryptSalt = 10;
 
+// VIEW SING UP PAGE
 
 router.get('/signup', (req, res, next) => {
   res.render('auth/signup', {
     errorMessage: ''
   });
 });
+
+
+// SING UP TO DB
 
 router.post('/signup', (req, res, next) => {
   const nameInput = req.body.name;
@@ -63,11 +67,15 @@ router.post('/signup', (req, res, next) => {
   });
 });
 
+// VIEW LOG IN PAGE
+
 router.get('/login', (req, res, next) => {
   res.render('auth/login', {
     errorMessage: ''
   });
 });
+
+// MAKE LOG IN
 
 router.post('/login', (req, res, next) => {
   const emailInput = req.body.email;
@@ -99,6 +107,8 @@ router.post('/login', (req, res, next) => {
     res.redirect('/');
   });
 });
+
+// LOG OUT
 
 router.get('/logout', (req, res, next) => {
   if (!req.session.currentUser) {

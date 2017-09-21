@@ -1,0 +1,30 @@
+
+<h2> Hello, <%= currentUserInfo.name %>, from here you can create a new event manager  </h2>
+
+<form action="/create-event-manager" method="post" enctype="form-data">
+  <div>
+    <label for="email-input"> Write his email </label>
+    <input type="email" name="email" id="email-input">
+  </div>
+
+  <div>
+    <label for="password-input"> Give him a password </label>
+    <input type="password" name="password" id="password-input">
+  </div>
+
+  <div>
+    <label for="name-input"> Write his name </label>
+    <input type="text" name="name" id="name-input">
+  </div>
+
+  <% if (errorMessage) { %>
+    <h2 class="error-message">
+      <%= errorMessage %>
+    </h2>
+  <% } %>
+
+  <button type="submit">Create New Event Manager</button>
+</form>
+
+<br>
+<a href="/"> Back home </a>

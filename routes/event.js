@@ -4,11 +4,23 @@ const Event    = require('../models/Event');
 const multer  = require('multer');
 const upload  = multer({ dest: './public/uploads/' });
 const Space    = require('../models/Space');
-
+const Coment    = require('../models/Coment');
 
 
 
 // GET EVENT DATA
+// router.get('/event/:id', (req, res, next) => {
+//   const scope = {};
+//   Event.findById(req.params.id)
+//     .then (event => {
+//       scope.event = event;
+//       return Space.findOne({ 'name' : event.place});
+//     })
+//     .then ( space => {
+//       res.render('events/event', { event: scope.event, space: space, comments: "",});
+//     });
+// });
+
 router.get('/event/:id', (req, res, next) => {
   const scope = {};
   Event.findById(req.params.id)
@@ -17,10 +29,19 @@ router.get('/event/:id', (req, res, next) => {
       return Space.findOne({ 'name' : event.place});
     })
     .then ( space => {
-      res.render('events/event', { event: scope.event, space: space});
+      scope.space = space;
+      return Coment.find({'eventId' : req.params.id});
+      })
+      .then( comments =>{
+      res.render('events/event', { event: scope.event, space: scope.space, comments: comments,});
     });
 });
 
+
+//   Coment.find({'eventId' : req.params.id})
+//   .then (comments => {
+//     res.redirect(`/event/${req.params.id}`, {event: event, space: req.params.space, comments: comments});});
+// });
 
 // VIEW ALL EVENTS
 router.get('/all-events' , (req, res, next) => {

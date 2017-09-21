@@ -14,6 +14,7 @@ const members = require('./routes/member');
 const authRoutes = require('./routes/auth');
 const spaces = require('./routes/space');
 const events = require('./routes/event');
+const coments = require('./routes/coment');
 //const bookings = require('./routes/booking');
 
 mongoose.connect('mongodb://localhost/co-work')
@@ -35,7 +36,6 @@ app.use(session({
   secret: "let's work together",
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60
@@ -64,6 +64,7 @@ app.use('/', members);
 app.use('/', authRoutes);
 app.use('/', spaces);
 app.use('/', events);
+app.use('/', coments);
 //app.use('/', bookings);
 
 

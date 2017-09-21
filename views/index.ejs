@@ -1,7 +1,7 @@
 <p> Welcome to <%= title %>. </p>
 
 <% if (isUserLoggedIn) { %>
-  <p> Hello, <%= currentUserInfo.name %>. </p>
+  <p> Hello, <%= currentUserInfo.name %>. <% if (currentUserInfo.role === 'Admin') { %> from here you can manage your space  <% } %> </p>
 <% } %>
 
 <nav>
@@ -9,12 +9,30 @@
     <% if (!isUserLoggedIn) { %>
       <li> <a href="/signup"> Sign Up </a> </li>
       <li> <a href="/login"> Log In </a> </li>
-    <% } else { %>
+    <% } else {
+       if (currentUserInfo.role === 'Admin') { %>
+
+      <a href="/create-space"> Create a working space </a>
+      <br>
+      <a href="/create-event-manager"> Create new Event Manager Account</a>
+      <br>
+      <a href="/create-event"> Create new  event </a>
+      
+
+      <% }else if (currentUserInfo.role === 'EventManager') { %>
+
+      <a href="/create-event"> Create new  event </a>
+      <br>
       <li> <a href="/profile"> My profile </a> </li>
+
+      <% }else{ %>
+
+      <li> <a href="/profile"> My profile </a> </li>
+      <% } %>
       <li><a href="/allmembers"> View all Members </a></li>
-      <li> <a href="/all-spaces"> Our Spaces </a> </li>
-      <li> <a href="/all-events"> Events </a> </li>
+      <li> <a href="/all-spaces"> Have a look to our working spaces </a> </li>
+      <li> <a href="/all-events"> Have a look to upcoming events </a> </li>
       <li> <a href="/logout"> Log Out </a> </li>
-    <% } %>
+      <% } %>
   </ul>
 </nav>

@@ -6,7 +6,8 @@
     <br><a href="/event/<%= events[i]._id %>"> Know more about this event </a></li>
  <% } %>
 </ul>
-
+ <% if (currentUserInfo.role === 'Admin' || currentUserInfo.role === 'EventManager') { %>
 <a href="/create-event"> Create event </a>
+<% } %>
 <br>
 <a href="/"> Back Home </a>

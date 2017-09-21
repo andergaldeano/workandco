@@ -12,6 +12,24 @@
   <p>Place: <a href="/space/<%= space._id %>"><%= event.place %></a></p>
 
 
+
+<h2>Are you interested? Leave a commentary </h2>
+  <form action="/leave-coment/<%= event._id %>/<%= currentUserInfo.name%>" method="post" enctype="form-data">
+    <div>
+      <label for="name-input"> Are you interested? Leave a commentary  </label>
+      <input type="text" name="description">
+    </div>
+    <button type="submit">submit</button>
+  </form>
+
+<h2>Comments</h2>
+
+
+<% for(var i = 0 ; i < comments.length; i++ ){%>
+   <h4> <%= comments[i].name  %> </h4>
+  <p> <%= comments[i].description  %></p>
+ <% } %>
+
 </section>
 
   <a href="/all-events"> Back to Events </a>
