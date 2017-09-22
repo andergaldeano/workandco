@@ -1,3 +1,16 @@
+<nav class="margin-bottom">
+  <img src="images/cowork-logo.png" href="/" class="brand-logo">
+
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li> <a href="/"> Home </a> </li>
+      <li> <a href="/profile"> My profile </a> </li>
+      <li> <a href="/all-events"> Events </a> </li>
+      <li> <a href="/logout"> Logout </a> </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
 
@@ -28,8 +41,9 @@
           <input id="date" name="date" type="date" value="2017-09-22">
       </div>
 
-      <div class="col s12">
-        <label for="image-input"> Event Image </label>
+      <div class="col s12 margin-bottom">
+        <label for="image-input"> Choose event image </label>
+        <br>
         <input type="file" name="image" id="image-input" placeholder="event image">
       </div>
 
@@ -45,7 +59,3 @@
       <%= errorMessage %>
     </h2>
   <% } %>
-
-  <a href="/all-events" class="waves-effect waves-light btn-large"> Back to Events </a>
-  <br>
-  <a href="/" class="waves-effect waves-light btn-large light-blue darken-2"> Back Home </a>

@@ -2,8 +2,7 @@
 
     <% if (!isUserLoggedIn) { %>
       <nav>
-        <a href="/" class="brand-logo"><%= title %></a>
-
+        <img src="images/cowork-logo.png" href="/" class="brand-logo">
         <div class="nav-wrapper">
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li> <a href="/signup"> Sign Up </a> </li>
@@ -18,7 +17,7 @@
       <div class="section no-pad-bot">
         <div class="container">
           <br><br>
-          <h1 class="header center teal-text text-lighten-2"><%= title %></h1>
+          <h1 class="header center teal-text text-lighten-2 white-letter"><%= title %></h1>
           <div class="row center">
             <h5 class="header col s12 light">A coworking manager for open and shared spaces.</h5>
           </div>
@@ -99,8 +98,8 @@
     <% } else {
        if (currentUserInfo.role === 'Admin') { %>
 
-         <nav>
-           <a href="/" class="brand-logo"><%= title %></a>
+         <nav class="margin-bottom">
+           <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
            <div class="nav-wrapper">
              <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -119,21 +118,11 @@
 
     <div class="container">
       <div class="row">
-       <!-- <div class="card col12 s12 m4">
-         <div class="card-image waves-effect waves-block waves-light">
-           <img class="activator" src="">
-         </div>
-         <div class="card-content">
-           <span class="card-title activator grey-text text-darken-4">Create a working space<i class="material-icons right">more_vert</i></span>
-           <p><a href="/create-space">Create a working space</a></p>
-         </div>
-       </div> -->
-
          <div class="col s12 m4">
            <div class="card red">
              <div class="card-content white-text">
-               <span class="card-title">Create a working space</span>
-               <p>I am a very simple card. I am good at containing small bits of information.</p>
+               <span class="card-title">Space Creator</span>
+               <p>Here you can create a new space for your co-working.</p>
              </div>
              <div class="card-action">
                <a href="/create-space">Create a working space</a>
@@ -141,57 +130,38 @@
            </div>
          </div>
 
-       <!-- <div class="card col12 s12 m4">
-         <div class="card-image waves-effect waves-block waves-light">
-           <img class="activator" src="">
-         </div>
-         <div class="card-content">
-           <span class="card-title activator grey-text text-darken-4">Create new Event Manager Account<i class="material-icons right">more_vert</i></span>
-           <p><a href="/create-event-manager">Create new Event Manager Account</a></p>
-         </div>
-       </div> -->
-
          <div class="col s12 m4">
            <div class="card red">
              <div class="card-content white-text">
-               <span class="card-title">Create new Event Manager Account</span>
-               <p>I am a very simple card. I am good at containing small bits of information.</p>
+               <span class="card-title">Event Manager Account</span>
+               <p>This section allow you to create event profile managers.</p>
              </div>
              <div class="card-action">
-               <a href="/create-event-manager">Create new Event Manager Account</a>
+               <a href="/create-event-manager">Create new EMA</a>
              </div>
            </div>
          </div>
 
-       <!-- <div class="card col12 s12 m4">
-         <div class="card-image waves-effect waves-block waves-light">
-           <img class="activator" src="">
-         </div>
-         <div class="card-content">
-           <span class="card-title activator grey-text text-darken-4">Create new  event<i class="material-icons right">more_vert</i></span>
-           <p><a href="/create-event">Create new event</a></p>
-         </div>
-       </div> -->
-
          <div class="col s12 m4">
            <div class="card red">
              <div class="card-content white-text">
-               <span class="card-title">Create new Event</span>
-               <p>I am a very simple card. I am good at containing small bits of information.</p>
+               <span class="card-title">Event Creator</span>
+               <p>The place where you can make cool stuff.</p>
              </div>
              <div class="card-action">
                <a href="/create-event">Create new Event</a>
              </div>
            </div>
          </div>
+       </div>
 
      </div>
    </div>
 
       <% }else if (currentUserInfo.role === 'EventManager') { %>
 
-        <nav>
-          <a href="/" class="brand-logo"><%= title %></a>
+        <nav class="margin-bottom">
+          <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
           <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -207,8 +177,8 @@
 
       <% }else{ %>
 
-        <nav>
-          <a href="/" class="brand-logo"><%= title %></a>
+        <nav class="margin-bottom">
+          <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
           <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -230,8 +200,8 @@
 
   <div class="container">
     <div class="row">
-        <div class="col12 s12 m4">
-          <div class="card col s3">
+        <div class="col s12 m4">
+          <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="images/cow3.png">
             </div>
@@ -247,8 +217,8 @@
         </div>
 
 
-        <div class="col12 s12 m4">
-          <div class="card col s3">
+        <div class="col s12 m4">
+          <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="images/cow1.png">
             </div>
@@ -264,8 +234,8 @@
         </div>
 
 
-        <div class="col12 s12 m4">
-        <div class="card col s3">
+        <div class="col s12 m4">
+        <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="images/cow2.png">
           </div>

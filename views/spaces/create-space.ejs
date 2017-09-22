@@ -1,3 +1,16 @@
+<nav class="margin-bottom">
+  <img src="images/cowork-logo.png" href="/" class="brand-logo">
+
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li> <a href="/"> Home </a> </li>
+      <li> <a href="/profile"> My profile </a> </li>
+      <li> <a href="/all-spaces"> Spaces </a> </li>
+      <li> <a href="/logout"> Logout </a> </li>
+    </ul>
+  </div>
+</nav>
+
   <div class="container">
     <div class="row">
     <h2>Create new space</h2>
@@ -12,11 +25,10 @@
           <input type="text" name="capacity" id="capacity-input" placeholder="space capacity">
         </div>
 
-        <div class="input-field input-field col s12">
-          <div class="btn" for="image-input">
-            <span>File</span>
+        <div class="input-field col s12 margin-bottom">
+            <label for="image"> Choose space image </label>
+            <br><br>
             <input class="file-path validate" type="file" name="image" value="File" placeholder="Upload a file o space image">
-          </div>
         </div>
 
         <button type="submit" class="waves-effect waves-light btn-large col s12">Create New Space</button>
@@ -24,7 +36,3 @@
 
     </div>
    </div>
-
-<a href="/all-spaces" class="waves-effect waves-light btn-large"> Back to Spaces </a>
-<br>
-<a href="/" class="waves-effect waves-light btn-large light-blue darken-2"> Back Home </a>

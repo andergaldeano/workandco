@@ -1,5 +1,5 @@
-<nav>
-  <a href="/" class="brand-logo"><%= title %></a>
+<nav class="margin-bottom">
+  <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -17,9 +17,9 @@
 
     <ul class="collection">
     <% for(var i = 0 ; i < spaces.length; i++ ){%>
-       <li class="collection-item"> <h4><%= spaces[i].name  %></h4> <h5><%= spaces[i].capacity %> people</h5>
-         <img src="<%= spaces[i].pic_path %>" alt="<%= spaces[i].pic_name %>" class="circle responsive-img circular"/>
-        <br><a href="/space/<%= spaces[i]._id %>" class="waves-effect waves-light btn-large"> Know more about this space </a></li>
+       <li class="collection-item"> <h4><%= spaces[i].name  %></h4> <h5><%= spaces[i].capacity %> </h5>
+        <img src="<%= spaces[i].picture %>" class="circular circle avatar"/>
+        <a href="/space/<%= spaces[i]._id %>" class="waves-effect waves-light btn-large right"> Know more about this space </a></li>
      <% } %>
     </ul>
 

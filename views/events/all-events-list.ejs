@@ -1,5 +1,5 @@
-<nav>
-  <a href="/" class="brand-logo"><%= title %></a>
+<nav class="margin-bottom">
+  <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -17,8 +17,8 @@
   <ul class="collection">
   <% for(var i = 0 ; i < events.length; i++ ){%>
      <li class="collection-item"> <h4><%= events[i].name  %></h4> <h5><%= events[i].date %> </h5>
-       <img src="<%= events[i].pic_path %>" alt="<%= events[i].pic_name %>" class="circle responsive-img circular"/>
-      <br><a href="/event/<%= events[i]._id %>"> Know more about this event </a></li>
+       <img src="<%= events[i].image %>" alt="<%= events[i].image %>" class="circular circle avatar"/>
+      <a href="/event/<%= events[i]._id %>" class="waves-effect waves-light btn-large right"> Know more about this event </a></li>
    <% } %>
   </ul>
    <% if (currentUserInfo.role === 'Admin' || currentUserInfo.role === 'EventManager') { %>

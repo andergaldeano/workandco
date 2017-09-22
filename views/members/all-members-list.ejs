@@ -1,5 +1,5 @@
-<nav>
-  <a href="/" class="brand-logo"><%= title %></a>
+<nav class="margin-bottom">
+  <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -19,11 +19,11 @@
        <li class="collection-item">
          <h4><%= members[i].name  %></h4>
          <h5><%= members[i].username %> - <%= members[i].email %></h5>
-           <img src="<%= members[i].pic_path %>" alt="<%= members[i].pic_name %>" class="circle responsive-img circular"/>
-           <a href="/profile/<%= members[i]._id %>" class="waves-effect waves-light btn-large"> See Member</a>
+           <img src="<%= members[i].pic_path %>" alt="<%= members[i].pic_name %>" class="circular circle avatar"/>
+           <a href="/profile/<%= members[i]._id %>" class="waves-effect waves-light btn-large right"> See Member</a>
 
          <% if (currentUserInfo.role === 'Admin') { %>
-           <a href="/delete/<%= members[i]._id %>" class="waves-effect waves-light btn-large deep-orange darken-4"> Delete Member</a>
+           <a href="/delete/<%= members[i]._id %>" class="waves-effect waves-light btn-large deep-orange darken-4 right margin-right"> Delete Member</a>
          <% } %>
 
       </li>
