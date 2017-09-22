@@ -19,7 +19,7 @@
        <li class="collection-item">
          <h4><%= members[i].name  %></h4>
          <h5><%= members[i].username %> - <%= members[i].email %></h5>
-           <img src="<%= members[i].pic_path %>" alt="<%= members[i].pic_name %>" class="circle responsive-img"/>
+           <img src="<%= members[i].pic_path %>" alt="<%= members[i].pic_name %>" class="circle responsive-img circular"/>
            <a href="/profile/<%= members[i]._id %>" class="waves-effect waves-light btn-large"> See Member</a>
 
          <% if (currentUserInfo.role === 'Admin') { %>

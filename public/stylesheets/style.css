@@ -1,36 +1,5 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00B7FF;
-}
-
-
-.form-container {
-  display: inline-block;
-  width: 49%;
-  margin: 30px auto 0;
-  vertical-align: top;
-}
-
-.member-form {
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  clear: both;
-}
-
-.member-form label {
-  width: 100px;
-  display: inline-block;
-}
-
-.field {
-  margin: 5px 0;
-}
-
-#send-data {
-  margin: 10px 0 0 120px;
+.circular {
+  width: 70px;
+  height: 70px;
 }
