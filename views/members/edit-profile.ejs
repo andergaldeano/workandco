@@ -1,20 +1,20 @@
 <div class="container">
+  <div class="row">
 
-<div class="row">
       <h2>Edit Character</h2>
       <h3> Remember that you have to udate your photo too </h3>
       <form action="/edit-profile/<%= currentUserInfo._id %>" method="POST"
-        id="edit-member-form" class="member-form" enctype="multipart/form-data">
+        id="edit-member-form" class="col s12" enctype="multipart/form-data">
 
-        <div class="field">
+        <div class="input-field col s12">
           <label for="name">Name: </label>
           <input type="text" name="name" value="<%= currentUserInfo.name %>">
         </div>
-        <div class="field">
+        <div class="input-field col s12">
           <label for="email">Email: </label>
           <input type="text" name="email" value="<%= currentUserInfo.email %>">
         </div>
-        <div class="field">
+        <div class="input-field col s12">
           <label for="username">Username: </label>
           <input type="text" name="username" value="<%= currentUserInfo.username %>">
         </div>
@@ -25,7 +25,7 @@
         <button type="submit" id="send-data" class="waves-effect waves-light btn-large">Update</button>
       </form>
 
+    </div>
+   </div>
 
       <a href="/profile" class="waves-effect waves-light btn-large"> Back to profile </a>
-
-<div class="container">

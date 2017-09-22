@@ -1,12 +1,114 @@
 
 
-  <ul>
     <% if (!isUserLoggedIn) { %>
-      <li> <a href="/signup" class="waves-effect waves-light btn-large"> Sign Up </a> </li>
-      <li> <a href="/login" class="waves-effect waves-light btn-large"> Log In </a> </li>
+      <nav>
+        <a href="/" class="brand-logo"><%= title %></a>
+
+        <div class="nav-wrapper">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          <li> <a href="/signup"> Sign Up </a> </li>
+          <li> <a href="/login"> Log In </a> </li>
+        </ul>
+
+        </div>
+      </nav>
+
+
+
+  <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+          <h1 class="header center teal-text text-lighten-2"><%= title %></h1>
+          <div class="row center">
+            <h5 class="header col s12 light">A coworking manager for open and shared spaces.</h5>
+          </div>
+          <div class="row center">
+            <a href="/signup" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Try it!</a>
+          </div>
+          <br><br>
+
+        </div>
+      </div>
+      <div class="parallax"><img src="images/coworking.jpg" alt="Coworking space"></div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">important_devices</i></h2>
+              <h5 class="center">Spaces management</h5>
+
+              <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+              <h5 class="center">Members control</h5>
+
+              <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">event_available</i></h2>
+              <h5 class="center">Events bookings</h5>
+
+              <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            <h5 class="header col s12 light">The coworking management system everyone wants to have</h5>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="images/coworking1.jpg" alt="Coworking space"></div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4>What are you waiting for getting control of your spaces?</h4>
+            <div class="row center">
+              <a href="/signup" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">I want it!</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
     <% } else {
        if (currentUserInfo.role === 'Admin') { %>
 
+    <nav>
+      <a href="/" class="brand-logo"><%= title %></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      </div>
+    </nav>
+
+     <div class="nav-wrapper">
       <a href="/create-space" class="waves-effect waves-light btn-large"> Create a working space </a>
       <br>
       <a href="/create-event-manager" class="waves-effect waves-light btn-large"> Create new Event Manager Account</a>
@@ -18,54 +120,67 @@
 
       <a href="/create-event" class="waves-effect waves-light btn-large"> Create new  event </a>
       <br>
-      <li> <a href="/profile" class="waves-effect waves-light btn-large"> My profile </a> </li>
+      <a href="/profile" class="waves-effect waves-light btn-large"> My profile </a>
 
       <% }else{ %>
 
-      <li> <a href="/profile" class="waves-effect waves-light btn-large"> My profile </a> </li>
+        <p> Welcome to <%= title %>. </p>
+
+        <% if (isUserLoggedIn) { %>
+          <p> Hello, <%= currentUserInfo.name %>. <% if (currentUserInfo.role === 'Admin') { %> from here you can manage your space  <% } %> </p>
+        <% } %>
+
+      <a href="/profile" class="waves-effect waves-light btn-large"> My profile </a>
       <% } %>
 
-      <li>
+
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="">
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">View all members<i class="material-icons right">more_vert</i></span>
-          <p><a href="href="/allmembers"">View all members</a></p>
+          <p><a href="/allmembers">View all members</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Members<i class="material-icons right">close</i></span>
           <p>Here is some more information about this product that is only revealed once clicked on.</p>
         </div>
       </div>
-      </li>
 
-      <li>
+
+
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="">
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">View all spaces<i class="material-icons right">more_vert</i></span>
-          <p><a href="href="/all-spaces"">View all spaces</a></p>
+          <p><a href="/all-spaces">View all spaces</a></p>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Spaces<i class="material-icons right">close</i></span>
           <p>Here is some more information about this product that is only revealed once clicked on.</p>
         </div>
       </div>
-      </li>
 
 
-      <li> <a href="/all-events" class="waves-effect waves-light btn-large"> Have a look to upcoming events </a> </li>
-      <li> <a href="/logout" class="waves-effect waves-light btn-large"> Log Out </a> </li>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Have a look to upcoming events<i class="material-icons right">more_vert</i></span>
+          <p><a href="/all-events">View all spaces</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Events<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div>
+
+
+      <a href="/logout" class="waves-effect waves-light btn-large"> Log Out </a>
       <% } %>
+
   </ul>
-
-
-<p> Welcome to <%= title %>. </p>
-
-<% if (isUserLoggedIn) { %>
-  <p> Hello, <%= currentUserInfo.name %>. <% if (currentUserInfo.role === 'Admin') { %> from here you can manage your space  <% } %> </p>
-<% } %>
