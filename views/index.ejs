@@ -105,7 +105,7 @@
            <div class="nav-wrapper">
              <ul id="nav-mobile" class="right hide-on-med-and-down">
                <li> <a href="/"> Home </a> </li>
-               <li> <a href="/profile"> my profile </a> </li>
+               <li> <a href="/profile"> My profile </a> </li>
                <li> <a href="/logout"> Logout </a> </li>
              </ul>
            </div>
@@ -115,11 +115,11 @@
          <p class="center"><strong>Welcome to your dashboard!</strong></p>
          <p class="center"><strong>From here you can manage your <i>awesome</i> co-working.</strong></p>
 
-
      <div class="nav-wrapper">
 
-
-       <div class="card">
+    <div class="container">
+      <div class="row">
+       <div class="card col12 s12 m4">
          <div class="card-image waves-effect waves-block waves-light">
            <img class="activator" src="">
          </div>
@@ -129,7 +129,7 @@
          </div>
        </div>
 
-       <div class="card">
+       <div class="card col12 s12 m4">
          <div class="card-image waves-effect waves-block waves-light">
            <img class="activator" src="">
          </div>
@@ -139,22 +139,34 @@
          </div>
        </div>
 
-       <div class="card">
+       <div class="card col12 s12 m4">
          <div class="card-image waves-effect waves-block waves-light">
            <img class="activator" src="">
          </div>
          <div class="card-content">
            <span class="card-title activator grey-text text-darken-4">Create new  event<i class="material-icons right">more_vert</i></span>
-           <p><a href="/create-event">Create new  event</a></p>
+           <p><a href="/create-event">Create new event</a></p>
          </div>
        </div>
-
+     </div>
+   </div>
 
       <% }else if (currentUserInfo.role === 'EventManager') { %>
 
+        <nav>
+          <a href="/" class="brand-logo"><%= title %></a>
+
+          <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li> <a href="/"> Home </a> </li>
+              <li> <a href="/profile"> My profile </a> </li>
+              <li> <a href="/logout"> Logout </a> </li>
+            </ul>
+          </div>
+        </nav>
+
+
       <a href="/create-event" class="waves-effect waves-light btn-large"> Create new  event </a>
-      <br>
-      <a href="/profile" class="waves-effect waves-light btn-large"> My profile </a>
 
       <% }else{ %>
 
@@ -164,7 +176,7 @@
           <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li> <a href="/"> Home </a> </li>
-              <li> <a href="/profile"> my profile </a> </li>
+              <li> <a href="/profile"> My profile </a> </li>
               <li> <a href="/logout"> Logout </a> </li>
 
             </ul>
@@ -179,47 +191,57 @@
 
       <% } %>
 
+  <div class="container">
+    <div class="row">
+        <div class="col12 s12 m4">
+          <div class="card col s3">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/cow3.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Members<i class="material-icons right">more_vert</i></span>
+              <p><a href="/allmembers">View all members</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Members<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="">
+
+        <div class="col12 s12 m4">
+          <div class="card col s3">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/cow1.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Spaces<i class="material-icons right">more_vert</i></span>
+              <p><a href="/all-spaces">View all spaces</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Spaces<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
         </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">View all members<i class="material-icons right">more_vert</i></span>
-          <p><a href="/allmembers">View all members</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Members<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+
+
+        <div class="col12 s12 m4">
+        <div class="card col s3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/cow2.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Events<i class="material-icons right">more_vert</i></span>
+            <p><a href="/all-events">View all events</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Events<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">View all spaces<i class="material-icons right">more_vert</i></span>
-          <p><a href="/all-spaces">View all spaces</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Spaces<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Have a look to upcoming events<i class="material-icons right">more_vert</i></span>
-          <p><a href="/all-events">View all spaces</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Events<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-
+    </div>
+  </div>
       <% } %>
