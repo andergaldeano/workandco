@@ -6,14 +6,12 @@
 
         <div class="nav-wrapper">
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-          <li> <a href="/signup"> Sign Up </a> </li>
-          <li> <a href="/login"> Log In </a> </li>
-        </ul>
+            <li> <a href="/signup"> Sign Up </a> </li>
+            <li> <a href="/login"> Log In </a> </li>
+          </ul>
 
         </div>
       </nav>
-
 
 
   <div id="index-banner" class="parallax-container">
@@ -101,19 +99,55 @@
     <% } else {
        if (currentUserInfo.role === 'Admin') { %>
 
-    <nav>
-      <a href="/" class="brand-logo"><%= title %></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <nav>
+           <a href="/" class="brand-logo"><%= title %></a>
 
-      </div>
-    </nav>
+           <div class="nav-wrapper">
+             <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li> <a href="/"> Home </a> </li>
+               <li> <a href="/profile"> my profile </a> </li>
+               <li> <a href="/logout"> Logout </a> </li>
+             </ul>
+           </div>
+         </nav>
+
+         <h5 class="center"> Hello, <em><%= currentUserInfo.name %></em>.</h5>
+         <p class="center"><strong>Welcome to your dashboard!</strong></p>
+         <p class="center"><strong>From here you can manage your <i>awesome</i> co-working.</strong></p>
+
 
      <div class="nav-wrapper">
-      <a href="/create-space" class="waves-effect waves-light btn-large"> Create a working space </a>
-      <br>
-      <a href="/create-event-manager" class="waves-effect waves-light btn-large"> Create new Event Manager Account</a>
-      <br>
-      <a href="/create-event" class="waves-effect waves-light btn-large"> Create new  event </a>
+
+
+       <div class="card">
+         <div class="card-image waves-effect waves-block waves-light">
+           <img class="activator" src="">
+         </div>
+         <div class="card-content">
+           <span class="card-title activator grey-text text-darken-4">Create a working space<i class="material-icons right">more_vert</i></span>
+           <p><a href="/create-space">Create a working space</a></p>
+         </div>
+       </div>
+
+       <div class="card">
+         <div class="card-image waves-effect waves-block waves-light">
+           <img class="activator" src="">
+         </div>
+         <div class="card-content">
+           <span class="card-title activator grey-text text-darken-4">Create new Event Manager Account<i class="material-icons right">more_vert</i></span>
+           <p><a href="/create-event-manager">Create new Event Manager Account</a></p>
+         </div>
+       </div>
+
+       <div class="card">
+         <div class="card-image waves-effect waves-block waves-light">
+           <img class="activator" src="">
+         </div>
+         <div class="card-content">
+           <span class="card-title activator grey-text text-darken-4">Create new  event<i class="material-icons right">more_vert</i></span>
+           <p><a href="/create-event">Create new  event</a></p>
+         </div>
+       </div>
 
 
       <% }else if (currentUserInfo.role === 'EventManager') { %>
@@ -124,13 +158,25 @@
 
       <% }else{ %>
 
-        <p> Welcome to <%= title %>. </p>
+        <nav>
+          <a href="/" class="brand-logo"><%= title %></a>
 
+          <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li> <a href="/"> Home </a> </li>
+              <li> <a href="/profile"> my profile </a> </li>
+              <li> <a href="/logout"> Logout </a> </li>
+
+            </ul>
+          </div>
+        </nav>
         <% if (isUserLoggedIn) { %>
-          <p> Hello, <%= currentUserInfo.name %>. <% if (currentUserInfo.role === 'Admin') { %> from here you can manage your space  <% } %> </p>
+          <h5 class="center"> Hello, <em><%= currentUserInfo.name %></em>.</h5>
+          <p class="center"><strong>Welcome to your dashboard!</strong></p>
+          <% if (currentUserInfo.role === 'Admin') { %>
+            <p class="center"><strong>from here you can manage your space  <% } %></strong></p>
         <% } %>
 
-      <a href="/profile" class="waves-effect waves-light btn-large"> My profile </a>
       <% } %>
 
 
@@ -148,8 +194,6 @@
         </div>
       </div>
 
-
-
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="">
@@ -163,7 +207,6 @@
           <p>Here is some more information about this product that is only revealed once clicked on.</p>
         </div>
       </div>
-
 
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
@@ -179,8 +222,4 @@
         </div>
       </div>
 
-
-      <a href="/logout" class="waves-effect waves-light btn-large"> Log Out </a>
       <% } %>
-
-  </ul>
