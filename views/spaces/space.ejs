@@ -1,25 +1,33 @@
-<h2> Welcome to <%= space.name %> </h2>
 
-<section>
-    <img src="<%= space.picture %>" />
-</section>
+<div class="container center">
 
-<section>
-  <p>Space name: <%= space.name %> </p>
-  <p>Capacity: <%= space.capacity %> </p>
-</section>
+    <h2> Welcome to <%= space.name %> </h2>
 
-<section>
-  <h4> Upcoming events: </h4>
-  <ul>
-  <% for(var i=0; i < events.length; i++){ %>
-    <li><a href="/event/<%= events[i]._id %>"><%= events[i].name %></a></li>
-  <% } %>
-  </ul>
-</section>
+      <div>
+          <img src="<%= space.picture %>" class="circle main-pic"/>
+      </div>
 
-<% if (currentUserInfo.role === 'Admin' || currentUserInfo.role === 'EventManager') { %>
-<a href="/create-event"> Create event </a>
-<% } %>
-  <br>
-  <a href="/all-spaces"> Back to Spaces </a>
+      <div>
+        <h5>Space name:</h5> <p><%= space.name %> </p>
+        <h5>Capacity:</h5> <p><%= space.capacity %> </p>
+      </div>
+
+      <div>
+        <h5> Upcoming events: </h5>
+        <ul class="collection">
+          <% for(var i=0; i < events.length; i++){ %>
+
+          <li class="collection-item avatar">
+            <i class="material-icons circle green">insert_chart</i>
+            <span class="title"><%= events[i].name %></span>
+                <p><a href="/event/<%= events[i]._id %>">See Event</a></p>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+
+    <% if (currentUserInfo.role === 'Admin' || currentUserInfo.role === 'EventManager') { %>
+    <a href="/create-event" class="waves-effect waves-light btn-large"> Create event </a>
+    <% } %>
+
+</div>

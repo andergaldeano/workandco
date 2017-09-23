@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
 
-      <h2>Edit Character</h2>
-      <h3> Remember that you have to udate your photo too </h3>
+      <h2>Edit my profile</h2>
+      <p><i> <sup>*</sup>Remember that you have to update your photo too </i></p>
       <form action="/edit-profile/<%= currentUserInfo._id %>" method="POST"
         id="edit-member-form" class="col s12" enctype="multipart/form-data">
 
@@ -18,7 +18,7 @@
           <label for="username">Username: </label>
           <input type="text" name="username" value="<%= currentUserInfo.username %>">
         </div>
-        <div>
+        <div class="col s12 margin-bottom">
           <input type="file" name="photo">
         </div>
 
@@ -27,5 +27,3 @@
 
     </div>
    </div>
-
-      <a href="/profile" class="waves-effect waves-light btn-large"> Back to profile </a>

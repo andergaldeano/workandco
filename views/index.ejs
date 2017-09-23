@@ -1,17 +1,6 @@
 
 
     <% if (!isUserLoggedIn) { %>
-      <nav>
-        <img src="images/cowork-logo.png" href="/" class="brand-logo">
-        <div class="nav-wrapper">
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li> <a href="/signup"> Sign Up </a> </li>
-            <li> <a href="/login"> Log In </a> </li>
-          </ul>
-
-        </div>
-      </nav>
-
 
   <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
@@ -98,17 +87,6 @@
     <% } else {
        if (currentUserInfo.role === 'Admin') { %>
 
-         <nav class="margin-bottom">
-           <img src="images/cowork-logo.png" href="/" class="brand-logo">
-
-           <div class="nav-wrapper">
-             <ul id="nav-mobile" class="right hide-on-med-and-down">
-               <li> <a href="/"> Home </a> </li>
-               <li> <a href="/profile"> My profile </a> </li>
-               <li> <a href="/logout"> Logout </a> </li>
-             </ul>
-           </div>
-         </nav>
 
          <h5 class="center"> Hello, <em><%= currentUserInfo.name %></em>.</h5>
          <p class="center"><strong>Welcome to your dashboard!</strong></p>
@@ -159,18 +137,6 @@
    </div>
 
       <% }else if (currentUserInfo.role === 'EventManager') { %>
-
-        <nav class="margin-bottom">
-          <img src="images/cowork-logo.png" href="/" class="brand-logo">
-
-          <div class="nav-wrapper">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li> <a href="/"> Home </a> </li>
-              <li> <a href="/profile"> My profile </a> </li>
-              <li> <a href="/logout"> Logout </a> </li>
-            </ul>
-          </div>
-        </nav>
 
 
       <a href="/create-event" class="waves-effect waves-light btn-large"> Create new  event </a>

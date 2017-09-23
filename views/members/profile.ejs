@@ -1,20 +1,9 @@
-<nav class="margin-bottom">
-  <img src="images/cowork-logo.png" href="/" class="brand-logo">
-
-  <div class="nav-wrapper">
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li> <a href="/"> Home </a> </li>
-      <li> <a href="/profile"> My profile </a> </li>
-      <li> <a href="/logout"> Logout </a> </li>
-    </ul>
-  </div>
-</nav>
 
 <div class="container center">
   <h2> Hello, <%= currentUserInfo.name %> </h2>
 
   <section>
-      <img src="<%= currentUserInfo.pic_path %>" alt="<%= currentUserInfo.pic_name %>" class="circle"/>
+      <img src="<%= currentUserInfo.pic_path %>" alt="<%= currentUserInfo.pic_name %>" class="circle main-pic"/>
   </section>
 
   <h5>Name:</h5> <p><%= currentUserInfo.name %> </p>

@@ -1,12 +1,14 @@
-<h2> Hello, <%= member.name %> </h2>
 
-<section>
-    <img src="<%= member.pic_path %>" alt="<%= member.pic_name %>" />
-</section>
+<div class="container center">
 
-<p>my name: <%= member.name %> </p>
-<p>my email: <%= member.email %> </p>
-<p>my username: <%= member.username %> </p>
+    <h4> Member Profile: <i><%= member.name %></i> </h4>
 
+    <section>
+        <img src="<%= member.pic_path %>" alt="<%= member.pic_name %>" class="circle main-pic" />
+    </section>
 
-<a href="/allmembers" class="waves-effect waves-light btn-large"> Back to Members List </a>
+    <h5>Name:</h5> <p><%= member.name %> </p>
+    <h5>E-mail:</h5> <p><%= member.email %> </p>
+    <h5>Username:</h5> <p><%= member.username %> </p>
+
+</div>

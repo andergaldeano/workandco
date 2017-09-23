@@ -6,13 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title><%= title %></title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/stylesheets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/stylesheets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 </head>
 
   <body>
+    <% if (!isUserLoggedIn) { %>
+
+    <nav>
+      <img src="images/cowork-logo.png" href="/" class="brand-logo">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li> <a href="/signup"> Sign Up </a> </li>
+          <li> <a href="/login"> Log In </a> </li>
+        </ul>
+      </div>
+    </nav>
+
+    <% } else { %>
+
+    <nav class="margin-bottom">
+      <img src="images/cowork-logo.png" href="/" class="brand-logo">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li> <a href="/"> Home </a> </li>
+          <li> <a href="/profile"> My profile </a> </li>
+          <li> <a href="/allmembers"> Members </a> </li>
+          <li> <a href="/all-spaces"> Spaces </a> </li>
+          <li> <a href="/all-events"> Events </a> </li>
+          <li> <a href="/logout"> Logout </a> </li>
+        </ul>
+      </div>
+    </nav>
+    <% } %>
 
     <%- body -%>
 
