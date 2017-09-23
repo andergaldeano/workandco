@@ -1,6 +1,7 @@
 
 <div class="container center">
-  <h2> Hello, <%= currentUserInfo.name %> </h2>
+
+  <h4> Hello, <i><%= currentUserInfo.name %></i> </h4>
 
   <section>
       <img src="<%= currentUserInfo.pic_path %>" alt="<%= currentUserInfo.pic_name %>" class="circle main-pic"/>
@@ -10,6 +11,8 @@
   <h5>E-mail:</h5> <p><%= currentUserInfo.email %> </p>
   <h5>Username:</h5> <p><%= currentUserInfo.username %> </p>
 
-  <a href="/edit-profile/<%= currentUserInfo._id %>" class="waves-effect waves-light btn-large"> Edit my profile </a>
+  <div class="margin-bottom">
+    <a href="/edit-profile/<%= currentUserInfo._id %>" class="waves-effect waves-light btn-large teal lighten-1 z-depth-3"> Edit my profile </a>
+  </div>
 
 </div>

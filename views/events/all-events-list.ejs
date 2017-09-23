@@ -1,17 +1,17 @@
 
 <div class="container">
 
-  <h1> Those are all the events we have</h1>
+  <h2> Those are all the events we have</h2>
 
   <ul class="collection">
   <% for(var i = 0 ; i < events.length; i++ ){%>
      <li class="collection-item"> <h4><%= events[i].name  %></h4> <h5><%= events[i].date %> </h5>
        <img src="<%= events[i].image %>" alt="<%= events[i].image %>" class="circular circle avatar"/>
-      <a href="/event/<%= events[i]._id %>" class="waves-effect waves-light btn-large right"> Know more about this event </a></li>
+      <a href="/event/<%= events[i]._id %>" class="waves-effect waves-light btn-large right teal lighten-1 z-depth-3"> Know more about this event </a></li>
    <% } %>
   </ul>
    <% if (currentUserInfo.role === 'Admin' || currentUserInfo.role === 'EventManager') { %>
-  <a href="/create-event" class="waves-effect waves-light btn-large"> Create event </a>
+  <a href="/create-event" class="waves-effect waves-light btn-large teal lighten-1 z-depth-3 margin-bottom"> Create event </a>
   <% } %>
 
 </div>

@@ -1,7 +1,7 @@
 
 <div class="container">
 
-    <h1> All the members</h1>
+    <h2> All the members</h2>
 
     <ul class="collection">
     <% for(var i = 0 ; i < members.length; i++ ){%>
@@ -9,10 +9,10 @@
          <h4><%= members[i].name  %></h4>
          <h5><%= members[i].username %> - <%= members[i].email %></h5>
            <img src="<%= members[i].pic_path %>" alt="<%= members[i].pic_name %>" class="circular circle avatar"/>
-           <a href="/profile/<%= members[i]._id %>" class="waves-effect waves-light btn-large right"> See Member</a>
+           <a href="/profile/<%= members[i]._id %>" class="waves-effect waves-light btn-large right teal lighten-1 z-depth-3"> See Member</a>
 
          <% if (currentUserInfo.role === 'Admin') { %>
-           <a href="/delete/<%= members[i]._id %>" class="waves-effect waves-light btn-large deep-orange darken-4 right margin-right"> Delete Member</a>
+           <a href="/delete/<%= members[i]._id %>" class="waves-effect waves-light btn-large deep-orange darken-4 right margin-right z-depth-3"> Delete Member</a>
          <% } %>
 
       </li>

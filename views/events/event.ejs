@@ -1,7 +1,7 @@
 <div class="container center">
 
 
-    <h2> This is <%= event.name %> </h2>
+    <h4> This is <i><%= event.name %></i> </h4>
 
     <div>
         <img src="<%= event.image %>" class="circle main-pic"/>
@@ -13,13 +13,13 @@
       <h5>Description:</h5> <p><%= event.description %> </p>
       <h5>Place:</h5> <p><a href="/space/<%= space._id %>"><%= event.place %></a></p>
 
-    <h4>Are you interested? Leave a comment </h4>
+    <h4>Leave a comment </h4>
       <form action="/leave-comment/<%= event._id %>/<%= currentUserInfo.name%>" method="post" enctype="form-data">
         <div>
           <label for="name-input"> Type here</label>
           <input type="text" name="description">
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="waves-effect waves-light btn-large teal lighten-1 col s12">Submit</button>
       </form>
 
     <h4>Comments:</h4>

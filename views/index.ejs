@@ -6,7 +6,7 @@
       <div class="section no-pad-bot">
         <div class="container">
           <br><br>
-          <h1 class="header center teal-text text-lighten-2 white-letter"><%= title %></h1>
+          <h1 class="header center teal-text text-lighten-2"><%= title %></h1>
           <div class="row center">
             <h5 class="header col s12 light">A coworking manager for open and shared spaces.</h5>
           </div>
@@ -75,7 +75,7 @@
             <h3><i class="mdi-content-send brown-text"></i></h3>
             <h4>What are you waiting for getting control of your spaces?</h4>
             <div class="row center">
-              <a href="/signup" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">I want it!</a>
+              <a href="/signup" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 z-depth-3">I want it!</a>
             </div>
           </div>
         </div>
@@ -97,37 +97,37 @@
     <div class="container">
       <div class="row">
          <div class="col s12 m4">
-           <div class="card red">
+           <div class="card teal lighten-1">
              <div class="card-content white-text">
                <span class="card-title">Space Creator</span>
                <p>Here you can create a new space for your co-working.</p>
              </div>
              <div class="card-action">
-               <a href="/create-space">Create a working space</a>
+               <a href="/create-space" class="white-text">Create a working space</a>
              </div>
            </div>
          </div>
 
          <div class="col s12 m4">
-           <div class="card red">
+           <div class="card teal lighten-1">
              <div class="card-content white-text">
                <span class="card-title">Event Manager Account</span>
                <p>This section allow you to create event profile managers.</p>
              </div>
              <div class="card-action">
-               <a href="/create-event-manager">Create new EMA</a>
+               <a href="/create-event-manager" class="white-text">Create new EMA</a>
              </div>
            </div>
          </div>
 
          <div class="col s12 m4">
-           <div class="card red">
+           <div class="card teal lighten-1">
              <div class="card-content white-text">
                <span class="card-title">Event Creator</span>
                <p>The place where you can make cool stuff.</p>
              </div>
              <div class="card-action">
-               <a href="/create-event">Create new Event</a>
+               <a href="/create-event" class="white-text">Create new Event</a>
              </div>
            </div>
          </div>
@@ -138,23 +138,28 @@
 
       <% }else if (currentUserInfo.role === 'EventManager') { %>
 
+        <h5 class="center"> Hello, <em><%= currentUserInfo.name %></em>.</h5>
+        <p class="center"><strong>Welcome to your dashboard!</strong></p>
 
-      <a href="/create-event" class="waves-effect waves-light btn-large"> Create new  event </a>
+        <div class="container">
+          <div class="row">
+             <div class="col s12 m4">
+               <div class="card red">
+                 <div class="card-content white-text">
+                   <span class="card-title">Event Creator</span>
+                   <p>The place where you can make cool stuff.</p>
+                 </div>
+                 <div class="card-action">
+                   <a href="/create-event">Create new Event</a>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
 
       <% }else{ %>
 
-        <nav class="margin-bottom">
-          <img src="images/cowork-logo.png" href="/" class="brand-logo">
 
-          <div class="nav-wrapper">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li> <a href="/"> Home </a> </li>
-              <li> <a href="/profile"> My profile </a> </li>
-              <li> <a href="/logout"> Logout </a> </li>
-
-            </ul>
-          </div>
-        </nav>
         <% if (isUserLoggedIn) { %>
           <h5 class="center"> Hello, <em><%= currentUserInfo.name %></em>.</h5>
           <p class="center"><strong>Welcome to your dashboard!</strong></p>
