@@ -121,31 +121,31 @@ const EventDefault = [
     description: "Friday night, after a whole week working hard, you deserve a break. Our taste beers will make you program like a boss. Come with us! ",
     place: "Auditorium",
     image: "/uploads/beer.jpg",
-    date:"2017-10-5"
+    date:"2017-10-05"
   },
   { name: "Beer - Pong",
     description: "Has somebody said drinking game? Let's play and try not get drunk. Join us and get some fun.",
     place: "Auditorium",
     image: "/uploads/beerpong.jpg",
-    date: "2017-10-6"
+    date: "2017-10-06"
   },
   { name: "OPENING DAY",
     description: "Are you ready for it? The best party ever done! On our co-workers big opening day you will be able to meet a lot of people with your same interests and hobbies. Don't be shy and lets date this one a memorable day",
     place: "Auditorium",
     image: "/uploads/opening.jpg",
-    date: "2017-10-7"
+    date: "2017-10-07"
   },
   { name: "Ajaxs Master Class",
     description: "Do you want to improve your programing skills? In this seminar we will teach you to program with Ajax. The class scheduling:  theory class for the first 2 hours and a practical exercise on the followings where we will review the fundamental elements of language and develop an exceptional mvp",
     place: "Common Area",
     image: "/uploads/ajax.png",
-    date: "2017-10-8"
+    date: "2017-10-08"
   },
   { name: "CSS Master Class",
     description: "Do you want to improve your programing skills? In this seminar we will teach you to program with CSS. The class scheduling:  theory class for the first 2 hours and a practical exercise on the followings where we will review the fundamental elements of language and develop an exceptional mvp",
     place: "Meeting Room",
     image: "/uploads/css.jpg",
-    date: "2017-10-9"
+    date: "2017-10-09"
   },
   { name: "Git Master Class",
     description: "Do you want to improve your programing skills? In this seminar we will teach you to program with Git. The class scheduling:  theory class for the first 2 hours and a practical exercise on the followings where we will review the fundamental elements of language and develop an exceptional mvp",
@@ -162,7 +162,7 @@ const EventDefault = [
   { name: "Node Master Class",
     description: "Do you want to improve your programing skills? In this seminar we will teach you to program with Node. The class scheduling:  theory class for the first 2 hours and a practical exercise on the followings where we will review the fundamental elements of language and develop an exceptional mvp",
     place: "Common Area",
-    image: "/uploads/nosejs_logo_green.jpg",
+    image: "/uploads/nodejs_logo_green.jpg",
     date: "2017-10-12"
   },
   { name: "HTML Master Class",
@@ -180,7 +180,7 @@ const EventDefault = [
   { name: "Hiring Week",
     description: "Do you want to a get a job? Try your best on our hiring week.",
     place: "Meeting Room",
-    image: "/uploads/hiring.png",
+    image: "/uploads/hiring.jpg",
     date: "2017-10-15"
   },
   { name: "Yummy Pizza",
