@@ -21,3 +21,7 @@
 .main-margin-bottom {
   margin-bottom: 500px;
 }
+
+.block {
+  margin: 80px 0;
+}
